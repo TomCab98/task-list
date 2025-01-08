@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -19,24 +19,17 @@ const appRoutes: Routes = [
   {path: 'about', component: AboutComponent}
 ]
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    BotonComponent,
-    TasksComponent,
-    TaskItemComponent,
-    AddTaskComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    FontAwesomeModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        BotonComponent,
+        TasksComponent,
+        TaskItemComponent,
+        AddTaskComponent,
+        FooterComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        FontAwesomeModule,
+        FormsModule,
+        RouterModule.forRoot(appRoutes, { enableTracing: true })], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
