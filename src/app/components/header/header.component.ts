@@ -11,8 +11,8 @@ import { BotonComponent } from '../boton/boton.component';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
-  title: string = 'Lista de tareas';
+export class HeaderComponent {
+  title: string = 'Task list';
   showAddTask: boolean = false;
   subscription?: Subscription;
 
@@ -21,8 +21,6 @@ export class HeaderComponent implements OnInit {
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
   }
-
-  ngOnInit(): void {}
 
   toggleAddTask() {
     return this.uiService.toggleAddTask();
