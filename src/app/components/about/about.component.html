@@ -1,6 +1,25 @@
-<div>
-    <h2> Task Tracker </h2>
-    <h4> V 1.0.0 </h4>
-    <br>
-    <a href = "/"> Go back </a>
+<div class="about">
+  <h2>Task Tracker</h2>
+  <h4>V 2.0.0</h4>
+  <br />
+  @for (paragraph of texts; track $index) {
+  <div class="box">
+    <h2>{{ paragraph.title }}</h2>
+    @if (isString(paragraph.description)) {
+    <p>{{ paragraph.description }}</p>
+    } @else {
+    <ul>
+      @for (item of paragraph.description; track $index) { @if (isLink(item)) {
+      <li>
+        <a href="{{ item }}" target="_blank">{{ item }}</a>
+      </li>
+      } @else {
+      <li>{{ item }}</li>
+      } }
+    </ul>
+    }
+  </div>
+  }
+
+  <a href="/">Go back</a>
 </div>

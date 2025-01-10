@@ -2,22 +2,21 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-boton',
+  standalone: true,
+  imports: [],
   templateUrl: './boton.component.html',
-  styleUrls: ['./boton.component.css']
+  styleUrls: ['./boton.component.css'],
 })
 export class BotonComponent implements OnInit {
+  @Input() text: string = '';
+  @Input() color: string = '';
+  @Output() btnClick = new EventEmitter();
 
-  @Input() text: string = "";
-  @Input() color: string = "";
-  @Output() btnClick = new EventEmitter()
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   OnClick() {
     this.btnClick.emit();
   }
-
 }
