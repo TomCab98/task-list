@@ -1,12 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-boton',
+  selector: 'app-button',
   standalone: true,
-  templateUrl: './boton.component.html',
-  styleUrls: ['./boton.component.css'],
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.css'],
 })
-export class BotonComponent {
+export class ButtonComponent {
   @Input() text: string = '';
   @Input() color: string = '';
   @Output() btnClick = new EventEmitter();

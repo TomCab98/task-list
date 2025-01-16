@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
-import { TasksComponent } from './components/tasks/tasks.component';
-import { AboutComponent } from './components/about/about.component';
+import { AboutComponent } from './features/about/about.component';
 
 export const routes: Routes = [
-  { path: '', component: TasksComponent },
+  { path: '', redirectTo: 'tasks', pathMatch: 'full' },
+  {
+    path: 'tasks',
+    loadChildren: () =>
+      import('./features/tasks/tasks.routes').then((m) => m.routes),
+  },
   { path: 'about', component: AboutComponent },
-  { path: '**', redirectTo: '' },
 ];
