@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../../service/task.service';
-import { Task } from '../../Task';
+import { TaskService } from '../services/task.service';
+import { Task } from '../../../core/models/task';
 import { TaskItemComponent } from './task-item/task-item.component';
-import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskModalComponent } from './add-task-modal/task-moda.component';
-import { UiService } from 'src/app/service/ui.service';
+import { UiService } from 'src/app/core/services/ui.service';
 
 @Component({
   selector: 'app-tasks',

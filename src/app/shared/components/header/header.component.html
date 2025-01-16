@@ -1,10 +1,10 @@
 <header>
   <h1>{{ title }}</h1>
-  @if (hasRoute("/")) {
-  <app-boton
+  @if (hasRoute("/tasks")) {
+  <app-button
     color="green"
     text="Add Task"
     (btnClick)="toggleModal()"
-  ></app-boton>
+  ></app-button>
   }
 </header>
