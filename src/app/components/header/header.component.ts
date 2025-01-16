@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UiService } from 'src/app/service/ui.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { BotonComponent } from '../boton/boton.component';
@@ -16,14 +15,10 @@ export class HeaderComponent {
   showAddTask: boolean = false;
   subscription?: Subscription;
 
-  constructor(private uiService: UiService, private router: Router) {
-    this.subscription = this.uiService
-      .onToggle()
-      .subscribe((value) => (this.showAddTask = value));
-  }
+  constructor(private readonly router: Router) {}
 
   toggleAddTask() {
-    return this.uiService.toggleAddTask();
+    return (this.showAddTask = !this.showAddTask);
   }
 
   hasRoute(route: string) {
