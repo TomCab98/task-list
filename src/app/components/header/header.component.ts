@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UiService } from 'src/app/service/ui.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { BotonComponent } from '../boton/boton.component';
@@ -11,21 +10,15 @@ import { BotonComponent } from '../boton/boton.component';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
-  title: string = 'Lista de tareas';
+export class HeaderComponent {
+  title: string = 'Task list';
   showAddTask: boolean = false;
   subscription?: Subscription;
 
-  constructor(private uiService: UiService, private router: Router) {
-    this.subscription = this.uiService
-      .onToggle()
-      .subscribe((value) => (this.showAddTask = value));
-  }
-
-  ngOnInit(): void {}
+  constructor(private readonly router: Router) {}
 
   toggleAddTask() {
-    return this.uiService.toggleAddTask();
+    return (this.showAddTask = !this.showAddTask);
   }
 
   hasRoute(route: string) {
