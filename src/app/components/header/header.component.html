@@ -2,9 +2,9 @@
   <h1>{{ title }}</h1>
   @if (hasRoute("/")) {
   <app-boton
-    color="{{ showAddTask ? 'red' : 'green' }}"
-    text="{{ showAddTask ? 'Close Task' : 'Add Task' }}"
-    (btnClick)="toggleAddTask()"
+    color="green"
+    text="Add Task"
+    (btnClick)="toggleModal()"
   ></app-boton>
   }
 </header>

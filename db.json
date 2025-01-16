@@ -29,6 +29,12 @@
       "day": "29 de Agosto 10:00 am",
       "reminder": true,
       "id": 5
+    },
+    {
+      "text": "Nueva tarea",
+      "day": "Dia y fecha",
+      "reminder": false,
+      "id": 6
     }
   ]
 }

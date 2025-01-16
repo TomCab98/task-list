@@ -1,0 +1,10 @@
+<div class="modal-overlay" *ngIf="showModal" (click)="onClose()"></div>
+<div class="modal-content" *ngIf="showModal">
+  <div class="modal-header">
+    <h2>Add New Task</h2>
+    <button class="close-btn" (click)="onClose()">&#10005;</button>
+  </div>
+  <div class="modal-body">
+    <app-task-form (saveTask)="onTaskSaved($event)"></app-task-form>
+  </div>
+</div>
