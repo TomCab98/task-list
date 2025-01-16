@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { BotonComponent } from '../boton/boton.component';
+import { UiService } from 'src/app/service/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +13,14 @@ import { BotonComponent } from '../boton/boton.component';
 })
 export class HeaderComponent {
   title: string = 'Task list';
-  showAddTask: boolean = false;
-  subscription?: Subscription;
 
-  constructor(private readonly router: Router) {}
+  constructor(
+    private readonly router: Router,
+    private readonly uiService: UiService
+  ) {}
 
-  toggleAddTask() {
-    return (this.showAddTask = !this.showAddTask);
+  toggleModal(): void {
+    this.uiService.toggleModal();
   }
 
   hasRoute(route: string) {

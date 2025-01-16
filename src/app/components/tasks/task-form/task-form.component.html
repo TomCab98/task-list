@@ -1,0 +1,38 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="add-form">
+  <div class="form-control">
+    <label for="text">Task</label>
+    <input
+      type="text"
+      id="text"
+      placeholder="Add Task Text"
+      formControlName="text"
+    />
+
+    @if (taskForm.get('text')?.invalid && taskForm.get('text')?.touched) {
+    <small> Task name is required. </small>
+    }
+  </div>
+
+  <div class="form-control">
+    <label for="day">Day & Time</label>
+    <input
+      type="text"
+      id="day"
+      placeholder="Add Day & Time"
+      formControlName="day"
+    />
+
+    @if (taskForm.get('day')?.invalid && taskForm.get('day')?.touched) {
+    <small> Day & Time is required. </small>
+    }
+  </div>
+
+  <div class="form-control form-control-check">
+    <label for="reminder">Reminder</label>
+    <input type="checkbox" id="reminder" formControlName="reminder" />
+  </div>
+
+  <button type="submit" class="btn btn-block" [disabled]="taskForm.invalid">
+    Save Task
+  </button>
+</form>
