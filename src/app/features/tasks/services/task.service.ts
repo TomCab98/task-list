@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Task } from '../../../core/models/task';
+import { environment } from '../../../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,11 +14,14 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:5001/tasks';
+  private apiUrl = `${environment.apiUrl}/tasks`;
 
   constructor(private http: HttpClient) {}
 
   getTask(): Observable<Task[]> {
+    if (environment.production) {
+      console.log('Modo producción activo');
+    }
     return this.http.get<Task[]>(this.apiUrl);
   }
 
