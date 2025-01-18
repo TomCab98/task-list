@@ -1,5 +1,7 @@
 # 📋 Task List
 
+![Static Badge](https://img.shields.io/badge/npm-22.13-green?style=for-the-badge&logo=npm&logoColor=green) ![Static Badge](https://img.shields.io/badge/angular-18.2.13-red?style=for-the-badge&logo=angular&logoColor=red) ![Static Badge](https://img.shields.io/badge/json_server-gray?style=for-the-badge&logo=serverfault&logoColor=orange) ![Static Badge](https://img.shields.io/badge/font_awesome-gray?style=for-the-badge&logo=fontawesome&logoColor=white)
+
 Welcome to **Task List**, a simple yet powerful task management application built with Angular. This project showcases my skills as a developer and my passion for creating user-friendly and functional web applications.
 
 ## 🚀 Features
@@ -62,7 +64,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## 👤 Author
 
-**Tomás Cabanillas**
+**Tomas Cabanillas**
 
 - [LinkedIn](https://www.linkedin.com/in/tomascabanillas/)
 - [GitHub](https://github.com/TomCab98)
