@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AboutComponent } from './features/about/about.component';
+import { AboutComponent } from './features/about/components/about.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'tasks', pathMatch: 'full' },
