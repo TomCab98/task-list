@@ -1,0 +1,19 @@
+<header>
+  <div class="header-left">
+    <h1>{{ title }}</h1>
+    @if (name) {
+    <p class="welcome-message">Welcome, {{ name }}!</p>
+    }
+  </div>
+  <div class="header-right">
+    @if (hasRoute("/tasks")) {
+    <app-button
+      color="green"
+      text="Add Task"
+      (btnClick)="toggleModal()"
+    ></app-button>
+    } @if (hasToken()) {
+    <button class="logout-btn" (click)="logout()">Logout</button>
+    }
+  </div>
+</header>

@@ -19,9 +19,6 @@ export class TaskService {
   constructor(private http: HttpClient) {}
 
   getTask(): Observable<Task[]> {
-    if (environment.production) {
-      console.log('Modo producción activo');
-    }
     return this.http.get<Task[]>(this.apiUrl);
   }
 

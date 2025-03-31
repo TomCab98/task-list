@@ -1,35 +1,31 @@
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="add-form">
   <div class="form-control">
-    <label for="text">Task</label>
+    <label for="name">Task</label>
     <input
-      type="text"
-      id="text"
+      type="name"
+      id="name"
       placeholder="Task name"
-      formControlName="text"
+      formControlName="name"
     />
 
-    @if (taskForm.get('text')?.invalid && taskForm.get('text')?.touched) {
+    @if (taskForm.get('name')?.hasError('required') &&
+    taskForm.get('name')?.touched) {
     <small> Task name is required. </small>
-    } @if (taskForm.get('text')?.hasError('minlength') &&
-    taskForm.get('text')?.touched) {
+    } @if (taskForm.get('name')?.hasError('minlength') &&
+    taskForm.get('name')?.touched) {
     <small> Task must be at least 3 characters. </small>
     }
   </div>
 
   <div class="form-control">
-    <label for="day">Day & Time</label>
-    <input
-      type="datetime-local"
-      id="day"
-      placeholder="Day & Time"
-      formControlName="day"
-    />
+    <label for="date">Day</label>
+    <input type="date" id="date" placeholder="Date" formControlName="date" />
 
-    @if (taskForm.get('day')?.hasError('required') &&
-    taskForm.get('day')?.touched) {
+    @if (taskForm.get('date')?.hasError('required') &&
+    taskForm.get('date')?.touched) {
     <small> Day & Time is required. </small>
-    } @if (taskForm.get('day')?.hasError('dateValidator') &&
-    taskForm.get('day')?.touched) {
+    } @if (taskForm.get('date')?.hasError('dateValidator') &&
+    taskForm.get('date')?.touched) {
     <small> The date and time cannot be in the past. </small>
     }
   </div>
