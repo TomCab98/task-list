@@ -1,46 +1,22 @@
 {
   "task": [
     {
-      "id": 1,
-      "name": "Primera app en Angular",
-      "date": "6 de Marzo 05:00 pm",
-      "reminder": false
-    },
-    {
-      "id": 2,
-      "name": "Hacer compras para el mes",
-      "date": "18 de Junio 06:00 pm",
-      "reminder": false
-    },
-    {
-      "id": 4,
-      "name": "Ir al mercado",
-      "date": "15 de Agosto 09:00 pm",
-      "reminder": false
-    },
-    {
-      "name": "Nueva Tarea",
-      "date": "29 de Agosto 10:00 am",
-      "reminder": true,
-      "id": 5
-    },
-    {
-      "name": "Nueva tarea",
-      "date": "Dia y fecha",
+      "name": "Tarea 1",
+      "date": "24/04/2025",
       "reminder": false,
-      "id": 6
-    },
-    {
-      "name": "Segunda tarea",
-      "date": "2025-04-04",
-      "reminder": false,
-      "id": 7
+      "id": 4
     },
     {
       "name": "Tarea 1",
-      "date": "06/04/2025",
+      "date": "19/04/2025",
       "reminder": false,
-      "id": 8
+      "id": 5
+    },
+    {
+      "name": "Generic H2 (Embedded)",
+      "date": "12/04/2025",
+      "reminder": false,
+      "id": 6
     }
   ],
   "users": [

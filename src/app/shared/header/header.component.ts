@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { UiService } from 'src/app/core/services/ui.service';
 import { ButtonComponent } from '../button/button.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-header',
@@ -17,11 +18,12 @@ export class HeaderComponent {
 
   constructor(
     private readonly router: Router,
-    private readonly uiService: UiService
+    private readonly uiService: UiService,
+    private readonly cookieService: CookieService
   ) {}
 
   ngOnInit(): void {
-    this.name = localStorage.getItem('name');
+    this.name = this.cookieService.get('name');
   }
 
   toggleModal(): void {
@@ -33,12 +35,11 @@ export class HeaderComponent {
   }
 
   logout(): void {
-    localStorage.removeItem('token');
-    localStorage.removeItem('name');
+    this.cookieService.deleteAll();
     this.router.navigate(['/login']);
   }
 
   hasToken(): boolean {
-    return !!localStorage.getItem('token');
+    return !!this.cookieService.get('token');
   }
 }

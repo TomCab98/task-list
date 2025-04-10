@@ -8,7 +8,8 @@
     <fa-icon
       [icon]="faTimes"
       [style.color]="'red'"
-      (click)="onDelete(task)"
+      [ngClass]="{ 'delete-animating': isDeleting[task.id!] }"
+      (click)="handleDelete(task, $event)"
     ></fa-icon>
   </h3>
   <p>

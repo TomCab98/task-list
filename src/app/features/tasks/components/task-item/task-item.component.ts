@@ -16,6 +16,8 @@ export class TaskItemComponent {
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
   @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
 
+  isDeleting: { [key: number]: boolean } = {};
+
   faTimes = faTimes;
 
   onDelete(task: Task) {
@@ -24,5 +26,15 @@ export class TaskItemComponent {
 
   onToggle(task: Task) {
     this.onToggleReminder.emit(task);
+  }
+
+  handleDelete(task: Task, event: MouseEvent): void {
+    event.stopPropagation();
+    this.isDeleting[task.id!] = true;
+
+    setTimeout(() => {
+      this.onDelete(task);
+      delete this.isDeleting[task.id!];
+    }, 1700);
   }
 }
