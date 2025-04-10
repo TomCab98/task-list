@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = `${environment.apiUrl}/tasks`;
+  private apiUrl = `${environment.apiUrl}/task`;
 
   constructor(private http: HttpClient) {}
 
