@@ -1,40 +1,67 @@
 {
-  "tasks": [
+  "task": [
     {
       "id": 1,
-      "text": "Primera app en Angular",
-      "day": "6 de Marzo 05:00 pm",
+      "name": "Primera app en Angular",
+      "date": "6 de Marzo 05:00 pm",
       "reminder": false
     },
     {
       "id": 2,
-      "text": "Hacer compras para el mes",
-      "day": "18 de Junio 06:00 pm",
-      "reminder": false
-    },
-    {
-      "id": 3,
-      "text": "Investigar sobre Bootstrap",
-      "day": "10 de Julio 06:00 pm",
+      "name": "Hacer compras para el mes",
+      "date": "18 de Junio 06:00 pm",
       "reminder": false
     },
     {
       "id": 4,
-      "text": "Ir al mercado",
-      "day": "15 de Agosto 09:00 pm",
+      "name": "Ir al mercado",
+      "date": "15 de Agosto 09:00 pm",
       "reminder": false
     },
     {
-      "text": "Nueva Tarea",
-      "day": "29 de Agosto 10:00 am",
+      "name": "Nueva Tarea",
+      "date": "29 de Agosto 10:00 am",
       "reminder": true,
       "id": 5
     },
     {
-      "text": "Nueva tarea",
-      "day": "Dia y fecha",
+      "name": "Nueva tarea",
+      "date": "Dia y fecha",
       "reminder": false,
       "id": 6
+    },
+    {
+      "name": "Segunda tarea",
+      "date": "2025-04-04",
+      "reminder": false,
+      "id": 7
+    },
+    {
+      "name": "Tarea 1",
+      "date": "06/04/2025",
+      "reminder": false,
+      "id": 8
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Tomas",
+      "email": "tomas@example.com"
+    },
+    {
+      "id": 2,
+      "name": "User",
+      "email": "user@example.com"
+    }
+  ],
+  "login": [
+    {
+      "name": "Tomas",
+      "email": "tomas@example.com",
+      "message": "Successfull",
+      "jwt": "jwt2",
+      "status": true
     }
   ]
 }

@@ -14,14 +14,11 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = `${environment.apiUrl}/tasks`;
+  private apiUrl = `${environment.apiUrl}/task`;
 
   constructor(private http: HttpClient) {}
 
   getTask(): Observable<Task[]> {
-    if (environment.production) {
-      console.log('Modo producción activo');
-    }
     return this.http.get<Task[]>(this.apiUrl);
   }
 
