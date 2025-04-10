@@ -14,3 +14,31 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@keyframes bubblePop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.4);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  75% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.delete-animating {
+  display: inline-block;
+  animation: bubblePop 1.5s cubic-bezier(0.6, 0.05, 0.1, 1.1) forwards;
+}
